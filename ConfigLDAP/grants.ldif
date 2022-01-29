@@ -1,0 +1,44 @@
+# First remove the existing Access control items
+# There are 3 existing; so remove them one-by-one 
+dn: olcDatabase={1}mdb,cn=config
+changetype: modify
+delete: olcAccess
+olcAccess: {2}
+
+dn: olcDatabase={1}mdb,cn=config
+changetype: modify
+delete: olcAccess
+olcAccess: {1}
+
+dn: olcDatabase={1}mdb,cn=config
+changetype: modify
+delete: olcAccess
+olcAccess: {0}
+
+# Now start adding the rules. First add the shadowLastChange for self
+dn: olcDatabase={1}mdb,cn=config
+changetype: modify
+add: olcAccess
+olcAccess: to attrs=shadowLastChange by self write by * read
+
+# Add the rule that the user 'webuserldap' can manage passwords
+dn: olcDatabase={1}mdb,cn=config
+changetype: modify
+add: olcAccess
+olcAccess: to attrs=userPassword by dn.base="cn=webuserldap,ou=users,ou=mijnsite,dc=mijnsite,dc=local" write by * read
+
+# Add the rule that some user that is logged on (bind) can change its own password
+dn: olcDatabase={1}mdb,cn=config
+changetype: modify
+add: olcAccess
+olcAccess: to attrs=userPassword by self write by anonymous auth by * none
+
+# Allow the user 'webuserldap' to manage the entries under the indicated base DN 
+dn: olcDatabase={1}mdb,cn=config
+changetype: modify
+add: olcAccess
+olcAccess: to dn.subtree="ou=mijnsite,dc=mijnsite,dc=local" by dn.base="cn=webuserldap,ou=users,ou=mijnsite,dc=mijnsite,dc=local" manage by * read
+-
+add: olcAccess
+olcAccess: to * by * read
+-
