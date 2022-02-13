@@ -13,7 +13,7 @@ We gebruiken hiervoor de volgende producten in de VM:
   * OpenLDAP identity store
   * Apache 2 webserver
   * MySQK Database
-  * PHP als programmeertaal
+  * PHP (7.x) als programmeertaal
   * GIT als versiebeheersysteem
   * SAMBA voor toegang tot bestanden op afstand
   * XDebug voor remote debugging met PHP
@@ -32,13 +32,14 @@ de basis al doorlopen voor de Virtuele Machine die je aangeleverd krijgt. Echter
 nog niet toegepast.
 
   1. [Installatiehandleiding Debian & SSH]( ./DebianInstall/README.md )
-  1. [Ophalen van bestanden](./GIT/README.md)
-  1. [Installatie OpenLDAP](./OpenLDAP/README.md)
-  1. [Installatie Apache Directory Studio](./ApacheLDAPStudio/README.md)
-  1. [Configuratie gebruikers en groepen in LDAP](./ConfigLDAP/README.md)
-  1. [Installatie Apache Webserver](./ApacheWebServer/README.md)
-  1. [Installatie PHP](./php/README.md)
-  1. [Netwerk instellen](./Netwerk/README.md)
+  2. [Ophalen van bestanden](./GIT/README.md)
+  3. [Installatie OpenLDAP](./OpenLDAP/README.md)
+  4. [Installatie Apache Directory Studio](./ApacheLDAPStudio/README.md)
+  5. [Configuratie gebruikers en groepen in LDAP](./ConfigLDAP/README.md)
+  6. [Installatie Apache Webserver](./ApacheWebServer/README.md)
+  7. [Installatie PHP](./php/README.md)
+  8. [Netwerk instellen](./Netwerk/README.md)
+  9. [Debugging](./Debugging/README.md)
   
 Uiteindelijk kun je onderstaande landschap inrichten:
 
