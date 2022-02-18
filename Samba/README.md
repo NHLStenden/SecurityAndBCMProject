@@ -99,7 +99,7 @@ een netwerkdrive mappen naar zo´n locatie, zodat je bijvoorbeeld via `H:` deze 
 Je kunt dit ook met een command-line commando doen:
 
 ```
-NET USE w: \\energy.org\website /user:student wachtwoord
+NET USE h: \\energy.org\student /user:student wachtwoord
 ```
 Het laatste woord is overigens het wachtwoord.
 
