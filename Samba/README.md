@@ -96,13 +96,50 @@ Typ in de adresbalk van je Windows Verkenner bijvoorbeeld onderstaande:
 om de gebruikers HOME-directory van gebruiker `martin` te openen op IP-adres `192.168.233.203`. Je kunt eventueel
 een netwerkdrive mappen naar zo´n locatie, zodat je bijvoorbeeld via `H:` deze bestanden makkelijk kunt gebruiken.
 
+Je kunt dit ook met een command-line commando doen:
+
+```
+NET USE w: \\energy.org\website /user:student wachtwoord
+```
+Het laatste woord is overigens het wachtwoord.
+
 Op Linux kun je vaak verbinding maken via onderstaande URL:
 
 `smb://192.168.233.203/martin/`
 
 of door deze op te nemen in het bestand `/etc/fstab`. Zie de referenties onderaan voor meer informatie hierover. 
 
-### Referenties
+## Gebruik van PHPStorm en gedeelde mappen
+Let op dat PHPStorm geen project accepteert dat in de root van een driveletter (bijv. w:\) staan. 
+In dat geval dien je de gedeelde map in Samba mogelijk één map hoger instellen.
+
+Dus niet 
+```text
+  [website]
+  browseable = yes
+  path = /var/www/energy
+  valid users = martin
+  force group = www-data
+  force user = www-data
+  create mask = 660
+  directory mask = 770
+```
+
+maar wel:
+```text
+  [website]
+  browseable = yes
+  path = /var/www
+  valid users = martin
+  force group = www-data
+  force user = www-data
+  create mask = 660
+  directory mask = 770
+```
+
+
+
+## Referenties
   * [Samba op Wikipedia](https://nl.wikipedia.org/wiki/Samba_(software))
   * [SMB / CIFS Protocol](https://nl.wikipedia.org/wiki/Server_Message_Block)
   * [Ubuntu Samba Tutorial](https://ubuntu.com/tutorials/install-and-configure-samba#1-overview)
