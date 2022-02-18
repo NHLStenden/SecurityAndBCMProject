@@ -110,7 +110,7 @@ Op Linux kun je vaak verbinding maken via onderstaande URL:
 of door deze op te nemen in het bestand `/etc/fstab`. Zie de referenties onderaan voor meer informatie hierover. 
 
 ## Gebruik van PHPStorm en gedeelde mappen
-Let op dat PHPStorm geen project accepteert dat in de root van een driveletter (bijv. w:\) staan. 
+Let op dat PHPStorm geen project accepteert dat in de root van een driveletter (bijv. w:\\) staan. 
 In dat geval dien je de gedeelde map in Samba mogelijk één map hoger instellen.
 
 Dus niet 
